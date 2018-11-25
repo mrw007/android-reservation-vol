@@ -27,6 +27,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wcompany.mrwah.reservation_vol.MainActivity" />
         </activity>
+        <activity android:name=".RechercheVol"></activity>
     </application>
 
 </manifest>

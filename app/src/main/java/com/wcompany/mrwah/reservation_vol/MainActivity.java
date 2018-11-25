@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         liste_vols.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListeVols.class);
+                Intent intent = new Intent(MainActivity.this, RechercheVol.class);
                 startActivity(intent);
             }
         });
