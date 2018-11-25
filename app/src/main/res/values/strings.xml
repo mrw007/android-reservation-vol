@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">reservation-vol</string>
+    <string name="title_activity_liste_vols">ListeVols</string>
 </resources>
