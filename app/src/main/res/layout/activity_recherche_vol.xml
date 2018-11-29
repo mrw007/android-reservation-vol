@@ -1,109 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/not_so_white"
-    android:orientation="vertical"
-    tools:context=".RechercheVol">
+    tools:context=".recherche_vol">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/not_so_white"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:cardElevation="1dp">
+
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/not_so_white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <ScrollView
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Réserver un Vol"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Choisir" />
-            </LinearLayout>
-
-            <Spinner
-                android:id="@+id/spnn_depart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/rounded_textview_borderscolored"
-                android:padding="13dp"
-                android:paddingStart="20dp" />
-
-            <Spinner
-                android:id="@+id/spnn_arrivee"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/rounded_textview_borderscolored"
-                android:padding="13dp"
-                android:paddingStart="20dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:gravity="bottom"
+        android:text="Réserver un Vol"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+    </android.support.design.widget.AppBarLayout>
 
 
-            <EditText
-                android:id="@+id/date_naiss"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/rounded_textview_borderscolored"
-                android:clickable="true"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="Date de Départ"
-                android:inputType="date"
-                android:padding="13dp"
-                android:paddingStart="20dp" />
+    <include layout="@layout/content_recherche_vol"/>
 
-            <Button
-                android:id="@+id/finsh_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp"
-                android:alpha="0.8"
-                android:background="@drawable/rounded_button_colored"
-                android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="60dp"
-                android:paddingRight="60dp"
-                android:paddingTop="5dp"
-                android:text="Rechercher"
-                android:textColor="@color/colorWhite"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <Button
+        android:id="@+id/rech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:alpha="0.8"
+        android:background="@drawable/rounded_button_colored"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:layout_gravity="bottom|center" />
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

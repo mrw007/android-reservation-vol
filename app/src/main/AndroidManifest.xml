@@ -19,15 +19,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListeVols"
-            android:label="@string/title_activity_liste_vols"
+            android:name=".recherche_vol"
+            android:label="@string/title_activity_recherche_vol"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wcompany.mrwah.reservation_vol.MainActivity" />
         </activity>
-        <activity android:name=".RechercheVol"></activity>
+        <activity
+            android:name=".List_vols"
+            android:label="@string/title_activity_list_vols"
+            android:parentActivityName=".recherche_vol"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wcompany.mrwah.reservation_vol.recherche_vol" />
+        </activity>
     </application>
 
 </manifest>
