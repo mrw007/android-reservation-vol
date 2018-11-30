@@ -9,9 +9,12 @@
     tools:showIn="@layout/activity_list_vols">
 
     <android.support.v7.widget.RecyclerView
+
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:id="@+id/liste_de_vol"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
 
 </android.support.v4.widget.NestedScrollView>

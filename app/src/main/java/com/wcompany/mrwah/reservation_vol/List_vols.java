@@ -40,7 +40,7 @@ public class List_vols extends AppCompatActivity {
 
         for (int i=0; i<=10;i++) {
             List_vol_item l = new List_vol_item(
-                    "400",
+                    "400 TND",
                     "8:30",
                     "11:30"
             );
