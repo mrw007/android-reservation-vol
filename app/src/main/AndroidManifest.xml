@@ -36,6 +36,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wcompany.mrwah.reservation_vol.recherche_vol" />
         </activity>
+        <activity
+            android:name=".Liste_reservationActivity"
+            android:label="@string/title_activity_liste_reservation"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wcompany.mrwah.reservation_vol.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

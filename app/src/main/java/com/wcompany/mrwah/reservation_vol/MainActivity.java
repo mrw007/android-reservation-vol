@@ -20,5 +20,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             }
         });
+        final CardView liste_res = findViewById(R.id.liste_res);
+        liste_res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Liste_reservationActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

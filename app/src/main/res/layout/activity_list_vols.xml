@@ -13,24 +13,24 @@
         android:layout_height="@dimen/app_bar_height"
         android:background="@color/not_so_white"
         android:fitsSystemWindows="true"
-        app:cardElevation="6dp"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:cardElevation="6dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="@color/not_so_white"
             app:cardElevation="6dp"
+            app:contentScrim="@color/not_so_white"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:background="@color/not_so_white"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:background="@color/not_so_white"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -38,7 +38,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_list_vols" />
-
 
 
 </android.support.design.widget.CoordinatorLayout>
