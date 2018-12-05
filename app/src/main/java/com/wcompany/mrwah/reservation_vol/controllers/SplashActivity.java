@@ -1,4 +1,4 @@
-package com.wcompany.mrwah.reservation_vol;
+package com.wcompany.mrwah.reservation_vol.controllers;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.wcompany.mrwah.reservation_vol.R;
+import com.wcompany.mrwah.reservation_vol.models.Session;
 public class SplashActivity extends AppCompatActivity {
     private ImageView logo;
+    Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         logo.startAnimation(splash_animation);
 
         final Intent walk_through = new Intent(this, Walk_throughActivity.class);
+        final Intent home = new Intent(this, MainActivity.class);
 
         Thread timer = new Thread() {
             public void run() {
@@ -26,27 +30,19 @@ public class SplashActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                   // session = new Session(getApplicationContext());
-                   /* switch (session.getType()) {
-                        case "admin": {
-                            startActivity(admin);
+                    session = new Session(getApplicationContext());
+                    switch (session.getType()) {
+                        case "client": {
+                            startActivity(home);
                             break;
                         }
-                        case "abonne": {
-                            startActivity(abonne);
-                            break;
-                        }
-                        case "medecin": {
-                            startActivity(medecin);
-                            break;
-                        }
-                        default:*/
+                        default:
 
                             startActivity(walk_through);
                     }
                     finish();
                 }
-          //  }
+            }
         };
         timer.start();
     }

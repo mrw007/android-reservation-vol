@@ -1,4 +1,4 @@
-package com.wcompany.mrwah.reservation_vol;
+package com.wcompany.mrwah.reservation_vol.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,14 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wcompany.mrwah.reservation_vol.List_vol_item;
+import com.wcompany.mrwah.reservation_vol.R;
+import com.wcompany.mrwah.reservation_vol.models.Vol;
+
 import java.util.List;
 
 public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.ViewHolder> {
 
-    private List<List_vol_item> listVols;
+    private List<Vol> listVols;
     private Context context;
 
-    public List_vol_adapter(List<List_vol_item> listVol, Context context) {
+    public List_vol_adapter(List<Vol> listVol, Context context) {
         this.listVols = listVol;
         this.context = context;
     }
@@ -30,11 +34,11 @@ public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.View
     @Override
     public void onBindViewHolder(@NonNull List_vol_adapter.ViewHolder viewHolder, int i) {
 
-        List_vol_item listvol = listVols.get(i);
+        Vol listvol = listVols.get(i);
 
-        viewHolder.textPrice.setText(listvol.getPrice());
-        viewHolder.textHeure_dep.setText(listvol.getHeure_dep());
-        viewHolder.textHeure_arr.setText(listvol.getHeure_arr());
+        viewHolder.textPrice.setText(String.valueOf(listvol.getPrix())+" TND");
+        viewHolder.textHeure_dep.setText(listvol.getHeure_Depart().toString());
+        viewHolder.textHeure_arr.setText(listvol.getHeure_Arrive().toString());
 
     }
 

@@ -1,4 +1,4 @@
-package com.wcompany.mrwah.reservation_vol;
+package com.wcompany.mrwah.reservation_vol.adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.wcompany.mrwah.reservation_vol.R;
 
 public class SliderAdapter  extends PagerAdapter {
     Context context;

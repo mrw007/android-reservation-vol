@@ -1,4 +1,4 @@
-package com.wcompany.mrwah.reservation_vol;
+package com.wcompany.mrwah.reservation_vol.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,14 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wcompany.mrwah.reservation_vol.R;
+import com.wcompany.mrwah.reservation_vol.models.Reservation;
+
 import java.util.List;
 
 public class List_reservation_adapter extends RecyclerView.Adapter<List_reservation_adapter.ViewHolder> {
 
-    private List<List_reservation_item> listReservation;
+    private List<Reservation> listReservation;
     private Context context;
 
-    public List_reservation_adapter(List<List_reservation_item> listReservation, Context context) {
+    public List_reservation_adapter(List<Reservation> listReservation, Context context) {
         this.listReservation = listReservation;
         this.context = context;
     }
@@ -30,8 +33,7 @@ public class List_reservation_adapter extends RecyclerView.Adapter<List_reservat
     @Override
     public void onBindViewHolder(@NonNull List_reservation_adapter.ViewHolder viewHolder, int i) {
 
-        List_reservation_item listres = listReservation.get(i);
-
+        Reservation listres = listReservation.get(i);
         viewHolder.textNum.setText(listres.getNumero());
         viewHolder.textDate.setText(listres.getDate().toString());
 

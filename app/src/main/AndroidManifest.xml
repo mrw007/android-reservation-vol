@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wcompany.mrwah.reservation_vol">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,48 +13,58 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".controllers.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-               <!-- <category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity>
         <activity
-            android:name=".recherche_vol"
+            android:name=".controllers.recherche_vol"
             android:label="@string/title_activity_recherche_vol"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".controllers.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wcompany.mrwah.reservation_vol.MainActivity" />
+                android:value="com.wcompany.mrwah.reservation_vol.controllers.MainActivity" />
         </activity>
         <activity
-            android:name=".List_vols"
+            android:name=".controllers.List_vols"
             android:label="@string/title_activity_list_vols"
-            android:parentActivityName=".recherche_vol"
+            android:parentActivityName=".controllers.recherche_vol"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wcompany.mrwah.reservation_vol.recherche_vol" />
+                android:value="com.wcompany.mrwah.reservation_vol.controllers.recherche_vol" />
         </activity>
         <activity
-            android:name=".Liste_reservationActivity"
+            android:name=".controllers.Liste_reservationActivity"
             android:label="@string/title_activity_liste_reservation"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".controllers.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wcompany.mrwah.reservation_vol.MainActivity" />
+                android:value="com.wcompany.mrwah.reservation_vol.controllers.MainActivity" />
         </activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".controllers.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Walk_throughActivity"></activity>
+        <activity android:name=".controllers.Walk_throughActivity" />
+        <activity android:name=".controllers.login_activity" />
+        <activity
+            android:name=".controllers.new_resActivity"
+            android:label="@string/title_activity_new_res"
+            android:parentActivityName=".controllers.List_vols"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wcompany.mrwah.reservation_vol.controllers.List_vols" />
+        </activity>
     </application>
 
 </manifest>

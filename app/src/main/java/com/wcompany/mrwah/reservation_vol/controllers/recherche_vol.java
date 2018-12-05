@@ -1,15 +1,15 @@
-package com.wcompany.mrwah.reservation_vol;
+package com.wcompany.mrwah.reservation_vol.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import com.wcompany.mrwah.reservation_vol.R;
 
 public class recherche_vol extends AppCompatActivity {
 

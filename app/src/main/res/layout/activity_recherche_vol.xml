@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/not_so_white"
-    tools:context=".recherche_vol">
+    tools:context=".controllers.recherche_vol">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/bar"

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".recherche_vol"
+    tools:context=".controllers.recherche_vol"
     tools:showIn="@layout/activity_recherche_vol"
     android:layout_marginBottom="20dp">
 
