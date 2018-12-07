@@ -34,8 +34,8 @@ public class List_reservation_adapter extends RecyclerView.Adapter<List_reservat
     public void onBindViewHolder(@NonNull List_reservation_adapter.ViewHolder viewHolder, int i) {
 
         Reservation listres = listReservation.get(i);
-        viewHolder.textNum.setText(listres.getNumero());
-        viewHolder.textDate.setText(listres.getDate().toString());
+        viewHolder.textNum.setText(listres.getIdRes());
+        viewHolder.textDate.setText(listres.getDateRes().toString());
 
     }
 

@@ -4,62 +4,57 @@ import java.sql.Date;
 import java.util.List;
 
 public class Reservation {
-    private long id_res;
-    private Date date;
-    private String numero;
+    private int idRes;
+    private Date dateRes;
+    private int nbrePlace;
     Vol vol;
     Client client;
-    List<Passager> passagers;
+    List<Passager> ListPassagers;
 
     public Reservation() {
     }
 
-    public Reservation(long id_res, Date date, String numero, Vol vol, Client client, List<Passager> passagers) {
-        this.id_res = id_res;
-        this.date = date;
-        this.numero = numero;
+    public Reservation(Date dateRes, int nbrePlace) {
+        this.dateRes = dateRes;
+        this.nbrePlace = nbrePlace;
+    }
+
+    public Reservation(Date dateRes, Vol vol, Client client) {
+        this.dateRes = dateRes;
         this.vol = vol;
         this.client = client;
-        this.passagers = passagers;
     }
 
-    public Reservation(Date date, Vol vol, Client client, List<Passager> passagers) {
-        this.date = date;
-        this.vol = vol;
+    public Reservation(Date dateRes, int nbrePlace, Client client, List<Passager> listPassagers, Vol vol) {
+        this.dateRes = dateRes;
+        this.nbrePlace = nbrePlace;
         this.client = client;
-        this.passagers = passagers;
-    }
-
-    public long getId_res() {
-        return id_res;
-    }
-
-    public void setId_res(long id_res) {
-        this.id_res = id_res;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public Vol getVol() {
-        return vol;
-    }
-
-    public void setVol(Vol vol) {
+        ListPassagers = listPassagers;
         this.vol = vol;
+    }
+
+    public int getIdRes() {
+        return idRes;
+    }
+
+    public void setIdRes(int idRes) {
+        this.idRes = idRes;
+    }
+
+    public Date getDateRes() {
+        return dateRes;
+    }
+
+    public void setDateRes(Date dateRes) {
+        this.dateRes = dateRes;
+    }
+
+    public int getNbrePlace() {
+        return nbrePlace;
+    }
+
+    public void setNbrePlace(int nbrePlace) {
+        this.nbrePlace = nbrePlace;
     }
 
     public Client getClient() {
@@ -70,23 +65,32 @@ public class Reservation {
         this.client = client;
     }
 
-    public List<Passager> getPassagers() {
-        return passagers;
+    public List<Passager> getListPassagers() {
+        return ListPassagers;
     }
 
-    public void setPassagers(List<Passager> passagers) {
-        this.passagers = passagers;
+    public void setListPassagers(List<Passager> listPassagers) {
+        ListPassagers = listPassagers;
+    }
+
+    public Vol getVol() {
+        return vol;
+    }
+
+    public void setVol(Vol vol) {
+        this.vol = vol;
     }
 
     @Override
     public String toString() {
         return "Reservation{" +
-                "id_res=" + id_res +
-                ", date=" + date +
-                ", numero='" + numero + '\'' +
-                ", vol=" + vol +
+                "idRes=" + idRes +
+                ", dateRes=" + dateRes +
+                ", nbrePlace=" + nbrePlace +
                 ", client=" + client +
-                ", passagers=" + passagers +
+                ", ListPassagers=" + ListPassagers +
+                ", vol=" + vol +
                 '}';
     }
 }
+

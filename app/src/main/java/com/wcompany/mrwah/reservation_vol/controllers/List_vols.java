@@ -1,11 +1,13 @@
 package com.wcompany.mrwah.reservation_vol.controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,12 +34,13 @@ import java.util.List;
 public class List_vols extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private List_vol_adapter adapter;
     private List<Vol> listVols;
     RequestQueue requestQueue;
     String baseUrl;
     private JsonArrayRequest get_vols_request;
-    Gson json = new GsonBuilder().registerTypeAdapter(Time .class, new TimeDeserializer()).setDateFormat("yyyy-MM-dd"). create();
+    Gson json = new GsonBuilder().registerTypeAdapter(Time.class, new TimeDeserializer()).setDateFormat("yyyy-MM-dd").create();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +91,14 @@ public class List_vols extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new List_vol_adapter(listVols, this);
+        adapter.setOnButtonClickLitener(new List_vol_adapter.OnButtonClickListener() {
+            @Override
+            public void onButtonClickListener(int position) {
+                Intent new_res = new Intent(List_vols.this, new_resActivity.class);
+                new_res.putExtra("reservation_selected", json.toJson(listVols.get(position)));
+                startActivity(new_res);
+            }
+        });
         recyclerView.setAdapter(adapter);
     }
 

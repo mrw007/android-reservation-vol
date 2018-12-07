@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.wcompany.mrwah.reservation_vol.List_vol_item;
@@ -18,6 +19,15 @@ public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.View
 
     private List<Vol> listVols;
     private Context context;
+    private OnButtonClickListener mListener;
+
+    public interface OnButtonClickListener{
+        void onButtonClickListener (int position);
+    }
+
+    public void setOnButtonClickLitener (OnButtonClickListener listener){
+        mListener = listener;
+    }
 
     public List_vol_adapter(List<Vol> listVol, Context context) {
         this.listVols = listVol;
@@ -28,7 +38,7 @@ public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.View
     public List_vol_adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v= LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.list_vol_item,viewGroup,false);
-        return new ViewHolder(v);
+        return new ViewHolder(v,mListener);
     }
 
     @Override
@@ -37,8 +47,8 @@ public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.View
         Vol listvol = listVols.get(i);
 
         viewHolder.textPrice.setText(String.valueOf(listvol.getPrix())+" TND");
-        viewHolder.textHeure_dep.setText(listvol.getHeure_Depart().toString());
-        viewHolder.textHeure_arr.setText(listvol.getHeure_Arrive().toString());
+        viewHolder.textHeure_dep.setText(listvol.getHeureDepart().toString());
+        viewHolder.textHeure_arr.setText(listvol.getHeureArrive().toString());
 
     }
 
@@ -47,18 +57,35 @@ public class List_vol_adapter extends RecyclerView.Adapter<List_vol_adapter.View
         return listVols.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textPrice;
         public TextView textHeure_dep;
         public TextView textHeure_arr;
+        public Button resBtn;
 
-        public  ViewHolder(View itemView){
+
+        public  ViewHolder(View itemView, final OnButtonClickListener listener){
             super(itemView);
 
             textPrice = itemView.findViewById(R.id.price);
             textHeure_dep=itemView.findViewById(R.id.heur_start);
             textHeure_arr=itemView.findViewById(R.id.heure_dest);
+            resBtn=itemView.findViewById(R.id.reserver_btn);
+
+            resBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onButtonClickListener(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
