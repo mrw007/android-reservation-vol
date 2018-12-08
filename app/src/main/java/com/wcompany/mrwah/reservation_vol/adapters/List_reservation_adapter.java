@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.wcompany.mrwah.reservation_vol.R;
 import com.wcompany.mrwah.reservation_vol.models.Reservation;
+import com.wcompany.mrwah.reservation_vol.models.Vol;
 
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class List_reservation_adapter extends RecyclerView.Adapter<List_reservat
 
     @Override
     public List_reservation_adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v= LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.list_reservation_item,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.list_reservation_item, viewGroup, false);
         return new ViewHolder(v);
     }
 
@@ -34,9 +35,16 @@ public class List_reservation_adapter extends RecyclerView.Adapter<List_reservat
     public void onBindViewHolder(@NonNull List_reservation_adapter.ViewHolder viewHolder, int i) {
 
         Reservation listres = listReservation.get(i);
-        viewHolder.textNum.setText(listres.getIdRes());
-        viewHolder.textDate.setText(listres.getDateRes().toString());
-
+        viewHolder.r_date.setText(listres.getDateRes().toString());
+        viewHolder.n_p_r.setText(String.valueOf(listres.getNbrePlace()));
+        Vol vol = listres.getVol();
+        viewHolder.V_s_r.setText(vol.getVilleDepart());
+        viewHolder.V_d_r.setText(vol.getVilleArrive());
+        viewHolder.heure_start.setText(vol.getHeureDepart().toString());
+        viewHolder.heur_dest.setText(vol.getHeureArrive().toString());
+        viewHolder.d_start.setText(vol.getDateDepart().toString());
+        viewHolder.d_dest.setText(vol.getDateArrive().toString());
+        viewHolder.f_num.setText(String.valueOf(vol.getNumVol()));
     }
 
     @Override
@@ -44,16 +52,32 @@ public class List_reservation_adapter extends RecyclerView.Adapter<List_reservat
         return listReservation.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView textNum;
-        public TextView textDate;
+        public TextView f_num;
+        public TextView V_s_r;
+        public TextView heure_start;
+        public TextView d_start;
+        public TextView V_d_r;
+        public TextView heur_dest;
+        public TextView d_dest;
+        public TextView r_date;
+        public TextView n_p_r;
 
-        public  ViewHolder(View itemView){
+
+        public ViewHolder(View itemView) {
             super(itemView);
+            f_num = itemView.findViewById(R.id.f_num);
+            V_s_r = itemView.findViewById(R.id.V_s_r);
+            heure_start = itemView.findViewById(R.id.heure_start);
+            d_start = itemView.findViewById(R.id.d_start);
+            V_d_r = itemView.findViewById(R.id.V_d_r);
+            heur_dest = itemView.findViewById(R.id.heur_dest);
+            d_dest = itemView.findViewById(R.id.d_dest);
+            r_date = itemView.findViewById(R.id.r_date);
+            n_p_r = itemView.findViewById(R.id.n_p_r);
 
-            textNum = itemView.findViewById(R.id.numeror);
-            textDate=itemView.findViewById(R.id.dater);
+
         }
     }
 

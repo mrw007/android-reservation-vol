@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,7 +16,6 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.wcompany.mrwah.reservation_vol.List_vol_item;
 import com.wcompany.mrwah.reservation_vol.R;
 import com.wcompany.mrwah.reservation_vol.TimeDeserializer;
 import com.wcompany.mrwah.reservation_vol.adapters.List_vol_adapter;

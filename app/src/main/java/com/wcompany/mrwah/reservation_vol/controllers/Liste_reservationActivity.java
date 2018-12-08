@@ -15,13 +15,19 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wcompany.mrwah.reservation_vol.R;
+import com.wcompany.mrwah.reservation_vol.TimeDeserializer;
+import com.wcompany.mrwah.reservation_vol.TimeSerializer;
 import com.wcompany.mrwah.reservation_vol.adapters.List_reservation_adapter;
+import com.wcompany.mrwah.reservation_vol.models.Client;
 import com.wcompany.mrwah.reservation_vol.models.Reservation;
+import com.wcompany.mrwah.reservation_vol.models.Session;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Liste_reservationActivity extends AppCompatActivity {
@@ -32,7 +38,9 @@ public class Liste_reservationActivity extends AppCompatActivity {
     String baseUrl;
     private List<Reservation> listRes;
     private JsonArrayRequest get_reservaztions_request;
-    Gson json = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+    Gson json = new GsonBuilder().registerTypeAdapter(Time.class, new TimeDeserializer()).registerTypeAdapter(Time.class, new TimeSerializer()).setDateFormat("yyyy-MM-dd").create();
+    Session session;
+    Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +49,22 @@ public class Liste_reservationActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        init();
+        baseUrl = getString(R.string.server_link);
+        listRes = new ArrayList<Reservation>();
+        session = new Session(getApplicationContext());
+        String sess = session.getAccount();
+        client = json.fromJson(sess, Client.class);
+        String id = String.valueOf(client.getIdClt());
+        init(id);
     }
 
-    private void init()
+    private void init(String id)
     {
-        jsonRequest();
+        jsonRequest(id);
     }
 
-    private void jsonRequest() {
-        get_reservaztions_request = new JsonArrayRequest(Request.Method.GET, baseUrl + "/res/listClient/1", new Response.Listener<JSONArray>() {
+    private void jsonRequest(String id) {
+        get_reservaztions_request = new JsonArrayRequest(Request.Method.GET, baseUrl + "/res/listClient/"+id, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject = null;

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.wcompany.mrwah.reservation_vol.List_vol_item;
 import com.wcompany.mrwah.reservation_vol.R;
 import com.wcompany.mrwah.reservation_vol.models.Vol;
 
