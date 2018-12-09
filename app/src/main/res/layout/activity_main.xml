@@ -1,195 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".controllers.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/not_so_white"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/transparent"
-        android:orientation="vertical"
+    tools:context=".controllers.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer_abn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="47dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+        android:id="@+id/navigation_h"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:background="@color/not_so_white"
         android:elevation="4dp"
-        android:gravity="start"
-        android:padding="0dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Bonjour!"
-            android:textSize="30sp" />
-
-        s<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Nom et prénom" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/btn_liste_vols"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            android:background="@color/not_so_white"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/not_so_white"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="10dp"
-                    android:src="@drawable/travel" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Vols"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.25dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/colorPrimary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Réserver\n un vol"
-                    android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/liste_res"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            android:background="@color/not_so_white"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/not_so_white"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="10dp"
-                    android:src="@drawable/notepad" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Mes Réservations"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.25dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/colorPrimary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Gérer les vols \nRéservés"
-                    android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.CardView
-            android:layout_width="340dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:background="@color/not_so_white"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/not_so_white"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:padding="10dp"
-                    android:src="@drawable/man"
-                    android:contentDescription="TODO" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Mon Profil"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.25dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/colorPrimary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Modifier vos coordonnées"
-                    android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-
-
-
-
-
-
-</LinearLayout>
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation" />
+</android.support.constraint.ConstraintLayout>

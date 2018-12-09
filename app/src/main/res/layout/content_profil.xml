@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".controllers.Liste_reservationActivity"
+    tools:context=".controllers.ProfilActivity"
     android:background="@color/not_so_white"
-    tools:showIn="@layout/activity_liste_reservation">
+    tools:showIn="@layout/activity_profil">
 
 
 
@@ -15,11 +15,10 @@
 
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:id="@+id/liste_de_reservations"
+        android:id="@+id/liste_profil"
         android:background="@color/not_so_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
-
 
 </android.support.constraint.ConstraintLayout>

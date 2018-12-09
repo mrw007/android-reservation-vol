@@ -6,13 +6,13 @@ public class Client {
     private long idClt;
     private String loginClt;
     private String passwordClt;
-    private String cin_clt;
-    private String nom_clt;
-    private String prenom_clt;
-    private int age_clt;
-    private String adresse_clt;
-    private String num_tel_clt;
-    private String mail_clt;
+    private String cinClt;
+    private String nomClt;
+    private String prenomClt;
+    private int ageClt;
+    private String adresseClt;
+    private String numTel;
+    private String mailClt;
     private List<Reservation> reservations;
 
     public Client() {
@@ -23,28 +23,28 @@ public class Client {
         this.passwordClt = passwordClt;
     }
 
-    public Client(String loginClt, String passwordClt, String cin_clt, String nom_clt, String prenom_clt, int age_clt, String adresse_clt, String num_tel_clt, String mail_clt) {
+    public Client(String loginClt, String passwordClt, String cinClt, String nomClt, String prenomClt, int ageClt, String adresseClt, String numTel, String mailClt) {
         this.loginClt = loginClt;
         this.passwordClt = passwordClt;
-        this.cin_clt = cin_clt;
-        this.nom_clt = nom_clt;
-        this.prenom_clt = prenom_clt;
-        this.age_clt = age_clt;
-        this.adresse_clt = adresse_clt;
-        this.num_tel_clt = num_tel_clt;
-        this.mail_clt = mail_clt;
+        this.cinClt = cinClt;
+        this.nomClt = nomClt;
+        this.prenomClt = prenomClt;
+        this.ageClt = ageClt;
+        this.adresseClt = adresseClt;
+        this.numTel = numTel;
+        this.mailClt = mailClt;
     }
 
-    public Client(String loginClt, String passwordClt, String cin_clt, String nom_clt, String prenom_clt, int age_clt, String adresse_clt, String num_tel_clt, String mail_clt, List<Reservation> reservations) {
+    public Client(String loginClt, String passwordClt, String cinClt, String nomClt, String prenomClt, int ageClt, String adresseClt, String numTel, String mailClt, List<Reservation> reservations) {
         this.loginClt = loginClt;
         this.passwordClt = passwordClt;
-        this.cin_clt = cin_clt;
-        this.nom_clt = nom_clt;
-        this.prenom_clt = prenom_clt;
-        this.age_clt = age_clt;
-        this.adresse_clt = adresse_clt;
-        this.num_tel_clt = num_tel_clt;
-        this.mail_clt = mail_clt;
+        this.cinClt = cinClt;
+        this.nomClt = nomClt;
+        this.prenomClt = prenomClt;
+        this.ageClt = ageClt;
+        this.adresseClt = adresseClt;
+        this.numTel = numTel;
+        this.mailClt = mailClt;
         this.reservations = reservations;
     }
 
@@ -73,59 +73,59 @@ public class Client {
     }
 
     public String getCin_clt() {
-        return cin_clt;
+        return cinClt;
     }
 
-    public void setCin_clt(String cin_clt) {
-        this.cin_clt = cin_clt;
+    public void setCin_clt(String cinClt) {
+        this.cinClt = cinClt;
     }
 
     public String getNom_clt() {
-        return nom_clt;
+        return nomClt;
     }
 
-    public void setNom_clt(String nom_clt) {
-        this.nom_clt = nom_clt;
+    public void setNom_clt(String nomClt) {
+        this.nomClt = nomClt;
     }
 
     public String getPrenom_clt() {
-        return prenom_clt;
+        return prenomClt;
     }
 
-    public void setPrenom_clt(String prenom_clt) {
-        this.prenom_clt = prenom_clt;
+    public void setPrenom_clt(String prenomClt) {
+        this.prenomClt = prenomClt;
     }
 
     public int getAge_clt() {
-        return age_clt;
+        return ageClt;
     }
 
-    public void setAge_clt(int age_clt) {
-        this.age_clt = age_clt;
+    public void setAge_clt(int ageClt) {
+        this.ageClt = ageClt;
     }
 
     public String getAdresse_clt() {
-        return adresse_clt;
+        return adresseClt;
     }
 
-    public void setAdresse_clt(String adresse_clt) {
-        this.adresse_clt = adresse_clt;
+    public void setAdresse_clt(String adresseClt) {
+        this.adresseClt = adresseClt;
     }
 
     public String getNum_tel_clt() {
-        return num_tel_clt;
+        return numTel;
     }
 
-    public void setNum_tel_clt(String num_tel_clt) {
-        this.num_tel_clt = num_tel_clt;
+    public void setNum_tel_clt(String numTel) {
+        this.numTel = numTel;
     }
 
     public String getMail_clt() {
-        return mail_clt;
+        return mailClt;
     }
 
-    public void setMail_clt(String mail_clt) {
-        this.mail_clt = mail_clt;
+    public void setMail_clt(String mailClt) {
+        this.mailClt = mailClt;
     }
 
     public List<Reservation> getReservations() {
@@ -142,13 +142,13 @@ public class Client {
                 "idClt=" + idClt +
                 ", loginClt='" + loginClt + '\'' +
                 ", passwordClt='" + passwordClt + '\'' +
-                ", cin_clt='" + cin_clt + '\'' +
-                ", nom_clt='" + nom_clt + '\'' +
-                ", prenom_clt='" + prenom_clt + '\'' +
-                ", age_clt=" + age_clt +
-                ", adresse_clt='" + adresse_clt + '\'' +
-                ", num_tel_clt='" + num_tel_clt + '\'' +
-                ", mail_clt='" + mail_clt + '\'' +
+                ", cinClt='" + cinClt + '\'' +
+                ", nomClt='" + nomClt + '\'' +
+                ", prenomClt='" + prenomClt + '\'' +
+                ", ageClt=" + ageClt +
+                ", adresseClt='" + adresseClt + '\'' +
+                ", numTel='" + numTel + '\'' +
+                ", mailClt='" + mailClt + '\'' +
                 ", reservations=" + reservations +
                 '}';
     }

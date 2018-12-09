@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controllers.Liste_reservationActivity">
+    android:background="@color/not_so_white"
+    tools:context=".controllers.ProfilActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/bar"
@@ -29,11 +30,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
             android:gravity="bottom"
-            android:text="Mes Réservations"
+            android:text="Mon Profil"
             android:textColor="@color/black"
             android:textSize="30sp" />
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_liste_reservation" />
+    <include layout="@layout/content_profil" />
 
 </android.support.design.widget.CoordinatorLayout>

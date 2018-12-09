@@ -42,6 +42,7 @@ public class Liste_reservationActivity extends AppCompatActivity {
     Session session;
     Client client;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,7 @@ public class Liste_reservationActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         baseUrl = getString(R.string.server_link);
         listRes = new ArrayList<Reservation>();
         session = new Session(getApplicationContext());

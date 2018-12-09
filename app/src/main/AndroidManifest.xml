@@ -65,6 +65,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wcompany.mrwah.reservation_vol.controllers.List_vols" />
         </activity>
+        <activity android:name=".controllers.signUpActivity" />
+        <activity
+            android:name=".controllers.ProfilActivity"
+            android:label="@string/title_activity_profil"
+            android:parentActivityName=".controllers.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wcompany.mrwah.reservation_vol.controllers.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
