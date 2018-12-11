@@ -26,8 +26,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class List_vols extends AppCompatActivity {
 
@@ -53,11 +58,27 @@ public class List_vols extends AppCompatActivity {
     }
 
     private void init() {
-        jsonRequest();
+        String ville_dep = getIntent().getStringExtra("ville_dep");
+        String ville_arr = getIntent().getStringExtra("ville_arr");
+        String date_dep = getIntent().getStringExtra("date");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRENCH);
+        Date date = null;
+        java.sql.Date sqlDate = null;
+        try {
+            date = dateFormat.parse(date_dep);
+            sqlDate = new java.sql.Date(date.getTime());
+
+           // Log.i("res_r",ville_dep+" "+ville_arr+" "+sqlDate.toString());
+            Vol vv= new Vol(sqlDate,ville_dep,ville_arr);
+            jsonRequest(json.toJson(vv));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    private void jsonRequest() {
-        get_vols_request = new JsonArrayRequest(Request.Method.GET, baseUrl + "/vols/list", new Response.Listener<JSONArray>() {
+    private void jsonRequest(String vv) {
+        get_vols_request = new JsonArrayRequest(Request.Method.POST, baseUrl + "/vols/searchVols/", vv,new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -65,6 +86,7 @@ public class List_vols extends AppCompatActivity {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
+                        Log.i("v_obj",jsonObject.toString());
                         Vol vol = json.fromJson(jsonObject.toString(), Vol.class);
                         listVols.add(vol);
                     } catch (JSONException e) {

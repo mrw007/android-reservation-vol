@@ -19,10 +19,11 @@ public class Reservation {
         this.nbrePlace = nbrePlace;
     }
 
-    public Reservation(Date dateRes, Vol vol, Client client) {
+    public Reservation(Date dateRes, Vol vol, Client client, int nbrePlace) {
         this.dateRes = dateRes;
         this.vol = vol;
         this.client = client;
+        this.nbrePlace=nbrePlace;
     }
 
     public Reservation(Date dateRes, int nbrePlace, Client client, List<Passager> listPassagers, Vol vol) {

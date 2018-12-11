@@ -66,7 +66,7 @@ public class Liste_reservationActivity extends AppCompatActivity {
     }
 
     private void jsonRequest(String id) {
-        get_reservaztions_request = new JsonArrayRequest(Request.Method.GET, baseUrl + "/res/listClient/"+id, new Response.Listener<JSONArray>() {
+        get_reservaztions_request = new JsonArrayRequest(Request.Method.GET, baseUrl + "/clts/listres/"+id, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject = null;

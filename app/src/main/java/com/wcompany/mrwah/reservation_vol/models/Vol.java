@@ -22,6 +22,12 @@ public class Vol {
     public Vol() {
     }
 
+    public Vol(Date dateDepart, String villeDepart, String villeArrive) {
+        this.dateDepart = dateDepart;
+        this.villeDepart = villeDepart;
+        this.villeArrive = villeArrive;
+    }
+
     public Vol(Date dateDepart, Time heureDepart, Date dateArrive, Time heureArrive, String avion, double prix, boolean etat, int nbrePlace, int nbrePlaceRestant, String villeDepart, String villeArrive) {
         this.dateDepart = dateDepart;
         this.heureDepart = heureDepart;

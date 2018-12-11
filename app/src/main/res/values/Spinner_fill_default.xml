@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="pays_array">
-        <item>Abidjan</item>
-        <item>Alger</item>
         <item>Amsterdam</item>
         <item>Bâle</item>
         <item>Bamako</item>

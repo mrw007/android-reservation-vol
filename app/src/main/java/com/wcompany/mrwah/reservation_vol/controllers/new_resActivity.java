@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,7 +42,9 @@ public class new_resActivity extends AppCompatActivity {
     Button conf_btn;
     Vol selected_vol;
     Client client;
+    TextView nbr_places;
     Date currentTime;
+    int nbr_p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,9 @@ public class new_resActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         conf_btn = findViewById(R.id.conf_btn);
+        nbr_places = findViewById(R.id.nbr_pass);
         session = new Session(getApplicationContext());
         requestQueue = Volley.newRequestQueue(this);
         init();
@@ -65,13 +70,27 @@ public class new_resActivity extends AppCompatActivity {
         client = gson.fromJson(sess, Client.class);
         java.util.Date utilStartDate = Calendar.getInstance().getTime();
         currentTime = new java.sql.Date(utilStartDate.getTime());
-        Log.i("dddd",currentTime.toString());
+        nbr_p = 1;
+        nbr_places.setText(String.valueOf(nbr_p));
+        Log.i("dddd", currentTime.toString());
         conf_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Reservation res = new Reservation(currentTime, selected_vol, client);
-                Log.i("ddddf",gson.toJson(res));
-                res_req(gson.toJson(res), v);
+                if (!nbr_places.getText().toString().equals("")) {
+                    nbr_p = Integer.parseInt(nbr_places.getText().toString());
+                    if (nbr_p != 0) {
+                        Reservation res = new Reservation(currentTime, selected_vol, client, nbr_p);
+                        Log.i("ddddf", gson.toJson(res));
+                        res_req(gson.toJson(res), v);
+                    } else {
+                        Toast toast3 = Toast.makeText(getApplicationContext(), "Veuillez vérifier le nombre de passagers", Toast.LENGTH_SHORT);
+                        toast3.show();
+                    }
+                } else {
+                    Toast toast2 = Toast.makeText(getApplicationContext(), "Veuillez vérifier le nombre de passagers", Toast.LENGTH_SHORT);
+                    toast2.show();
+                }
+
             }
         });
     }
