@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -41,6 +42,7 @@ public class List_vols extends AppCompatActivity {
     private List<Vol> listVols;
     RequestQueue requestQueue;
     String baseUrl;
+    TextView vill_s,vill_dest,dat;
     private JsonArrayRequest get_vols_request;
     Gson json = new GsonBuilder().registerTypeAdapter(Time.class, new TimeDeserializer()).setDateFormat("yyyy-MM-dd").create();
 
@@ -53,6 +55,10 @@ public class List_vols extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        vill_s= findViewById(R.id.vill_s);
+        vill_dest=findViewById(R.id.vill_dest);
+        dat=findViewById(R.id.dats);
 
         init();
     }
@@ -62,6 +68,11 @@ public class List_vols extends AppCompatActivity {
         String ville_arr = getIntent().getStringExtra("ville_arr");
         String date_dep = getIntent().getStringExtra("date");
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.FRENCH);
+
+        vill_s.setText(ville_dep);
+        vill_dest.setText(ville_arr);
+        dat.setText(date_dep);
+
         Date date = null;
         java.sql.Date sqlDate = null;
         try {
